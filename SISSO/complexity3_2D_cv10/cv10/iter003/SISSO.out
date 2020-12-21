@@ -1,0 +1,169 @@
+Version SISSO.3.0, June, 2019.
+================================================================================
+
+Reading data from train.dat ...
+Reading parameters from SISSO.in: 
+--------------------------------------------------------------------------------
+restarts ?     F
+descriptor dimension:        2
+property type:     1
+total number of properties:        1
+task_weighting:        1
+number of samples for each property:      393
+number of scalar features:       21
+times of applying the operator set for feature construction (rung of the feature space):        3
+max complexity (number of operators in a feature):        3
+number of dimension(unit)-type (for dimension analysis):        4
+dimension type for each primary feature: 
+  1.00  0.00  0.00  0.00
+  1.00  0.00  0.00  0.00
+  1.00  0.00  0.00  0.00
+  1.00  0.00  0.00  0.00
+  1.00  0.00  0.00  0.00
+  1.00  0.00  0.00  0.00
+  0.00  1.00  0.00  0.00
+  0.00  1.00  0.00  0.00
+  0.00  1.00  0.00  0.00
+  0.00  1.00  0.00  0.00
+  0.00  0.00  1.00  0.00
+  0.00  0.00  1.00  0.00
+  0.00  0.00  0.00  1.00
+  0.00  0.00  0.00  1.00
+  0.00  0.00  0.00  1.00
+  0.00  0.00  0.00  1.00
+  0.00  0.00  0.00  1.00
+  0.00  0.00  0.00  1.00
+  0.00  0.00  0.00  1.00
+  0.00  0.00  0.00  1.00
+  0.00  0.00  0.00  1.00
+lower bound of the max abs. data value for the selected features:     0.10000E-02
+upper bound of the max abs. data value for the selected features:     0.10000E+06
+Expected size of the SIS-selected (single) subspace :   100000
+operator set for feature construction: (+)(-)(*)(/)(exp)(log)(^-1)(^2)(^3)(sqrt)(cbrt)(|-|) 
+method for sparsification:  L0        
+number of the top ranked models to output:      100
+fit intercept?      T
+metric for model selection: RMSE
+--------------------------------------------------------------------------------
+
+Feature Construction and Descriptor Identification (FCDI) starts ...
+
+iteration:   1
+--------------------------------------------------------------------------------
+FC starts ...
+Standard Deviation (SD) of property 001:  189.24547
+Total number of features in the space phi00:             21
+Total number of features in the space phi01:            815
+Total number of features in the space phi02:         409184
+Total number of features in the space phi03:        1869458
+Size of the SIS-selected subspace from phi03:     100000
+Wall-clock time (second) for this FC:           94.31
+FC done!
+
+DI starts ...
+total number of SIS-selected features from all iterations:     100000
+L0 starts ...
+
+Model/descriptor for generating residual:
+================================================================================
+  1D descriptor (model): 
+Total RMSE,MaxAE:  67.577192211.719468
+@@@descriptor: 
+                      1:[((C*Tt)*(NT-TT))]
+       coefficients_001:     0.4007869580E-01
+          Intercept_001:     0.2407243785E+03
+         RMSE,MaxAE_001:     0.6757719191E+02    0.2117194679E+03
+================================================================================
+Wall-clock time (second) for this DI:           11.01
+DI done!
+
+iteration:   2
+--------------------------------------------------------------------------------
+FC starts ...
+File containing the features to be rejected: feature_space/Uspace.name
+Total number of features in the space phi00:             21
+Total number of features in the space phi01:            815
+Total number of features in the space phi02:         409184
+Total number of features in the space phi03:        1869458
+Size of the SIS-selected subspace from phi03:     100000
+Wall-clock time (second) for this FC:          117.15
+FC done!
+
+DI starts ...
+total number of SIS-selected features from all iterations:     200000
+L0 starts ...
+
+Final model/descriptor to report
+================================================================================
+  2D descriptor (model): 
+Total RMSE,MaxAE:  38.332006131.517955
+@@@descriptor: 
+                    777:[cbrt((DT*(Cr+Ni)))]
+                  86117:[(C*abs(TT-abs(DT-THT)))]
+       coefficients_001:     0.5056841925E+02    0.2255091006E+01
+          Intercept_001:     0.1578635964E+03
+         RMSE,MaxAE_001:     0.3833200633E+02    0.1315179553E+03
+================================================================================
+Wall-clock time (second) for this DI:         3385.52
+DI done!
+
+FCDI done !
+
+--------------------------------------------------------------------------------
+Total wall-clock time (second):         3667.50
+
+                                               Have a nice day !    
+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@h064>
+Subject: Job 842869: <testjob> Done
+
+Job <testjob> was submitted from host <l02> by user <xjsjqianquan> in cluster <hpc>.
+Job was executed on host(s) <16*h064>, in queue <priority>, as user <xjsjqianquan> in cluster <hpc>.
+                            <16*h066>
+</data/home/xjsjqianquan> was used as the home directory.
+</data/home/xjsjqianquan/hn0809/cv10/iter003> was used as the working directory.
+Started at Tue Nov  3 17:44:53 2020
+Results reported at Tue Nov  3 18:46:09 2020
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -q priority
+#BSUB -n 32
+#BSUB -o SISSO.out
+#BSUB -e SISSO.err
+#BSUB -J testjob
+#BSUB -x
+
+ncpus=`cat $LSB_DJOB_HOSTFILE | wc -l`
+source /data/soft/compiler/intel/v2013/2013intel.sh
+source /data/soft/intel/impi/4.1.0.024/bin64/mpivars.sh
+#source /data/home/xjsjswf/RESCU/RESCUPackage/barc
+#mpirun -machine $LSB_DJOB_HOSTFILE  -np ${ncpus} rescu --smi -i scf.input
+mpirun -np ${ncpus} /data/home/xjsjqianquan/bin/SISSO >log
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   : 117012.72 sec.
+    Max Memory :     22509 MB
+    Max Swap   :     35323 MB
+
+    Max Processes  :        41
+    Max Threads    :       106
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <SISSO.err> for stderr output of this job.
+

@@ -17,7 +17,7 @@ from sklearn.linear_model import Lasso
 from sklearn.model_selection import train_test_split
 import pandas as pd
 
-data_array = np.loadtxt('fatigue21.csv',encoding='utf-8-sig',delimiter=',')
+data_array = np.loadtxt('shuffled_fatigue21.csv',encoding='utf-8-sig',delimiter=',')
 # data_array = pd.read_csv('fatigue21.csv')
 # data_array = data_array.sample(frac=1).reset_index(drop=True)
 # data_array.to_csv('shuffer_fatigue21.csv', index=False)

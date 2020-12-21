@@ -1,0 +1,202 @@
+Version SISSO.3.0, June, 2019.
+================================================================================
+
+Reading data from train.dat ...
+Reading parameters from SISSO.in: 
+--------------------------------------------------------------------------------
+restarts ?     F
+descriptor dimension:        3
+property type:     1
+total number of properties:        1
+task_weighting:        1
+number of samples for each property:      437
+number of scalar features:       21
+times of applying the operator set for feature construction (rung of the feature space):        3
+max complexity (number of operators in a feature):        3
+number of dimension(unit)-type (for dimension analysis):        4
+dimension type for each primary feature: 
+  1.00  0.00  0.00  0.00
+  1.00  0.00  0.00  0.00
+  1.00  0.00  0.00  0.00
+  1.00  0.00  0.00  0.00
+  1.00  0.00  0.00  0.00
+  1.00  0.00  0.00  0.00
+  0.00  1.00  0.00  0.00
+  0.00  1.00  0.00  0.00
+  0.00  1.00  0.00  0.00
+  0.00  1.00  0.00  0.00
+  0.00  0.00  1.00  0.00
+  0.00  0.00  1.00  0.00
+  0.00  0.00  0.00  1.00
+  0.00  0.00  0.00  1.00
+  0.00  0.00  0.00  1.00
+  0.00  0.00  0.00  1.00
+  0.00  0.00  0.00  1.00
+  0.00  0.00  0.00  1.00
+  0.00  0.00  0.00  1.00
+  0.00  0.00  0.00  1.00
+  0.00  0.00  0.00  1.00
+lower bound of the max abs. data value for the selected features:     0.10000E-02
+upper bound of the max abs. data value for the selected features:     0.10000E+06
+Expected size of the SIS-selected (single) subspace :     3000
+operator set for feature construction: (+)(-)(*)(/)(exp)(log)(^-1)(^2)(^3)(sqrt)(cbrt)(|-|) 
+method for sparsification:  L0        
+number of the top ranked models to output:      100
+fit intercept?      T
+metric for model selection: RMSE
+--------------------------------------------------------------------------------
+
+Feature Construction and Descriptor Identification (FCDI) starts ...
+
+iteration:   1
+--------------------------------------------------------------------------------
+FC starts ...
+Standard Deviation (SD) of property 001:  186.41687
+Total number of features in the space phi00:             21
+Total number of features in the space phi01:            815
+Total number of features in the space phi02:         409276
+Total number of features in the space phi03:        1869478
+Size of the SIS-selected subspace from phi03:       3000
+Wall-clock time (second) for this FC:           36.73
+FC done!
+
+DI starts ...
+total number of SIS-selected features from all iterations:       3000
+L0 starts ...
+
+Model/descriptor for generating residual:
+================================================================================
+  1D descriptor (model): 
+Total RMSE,MaxAE:  67.813526215.436212
+@@@descriptor: 
+                      1:[((C*Tt)*(NT-TT))]
+       coefficients_001:     0.3966324004E-01
+          Intercept_001:     0.2435336130E+03
+         RMSE,MaxAE_001:     0.6781352601E+02    0.2154362125E+03
+================================================================================
+Wall-clock time (second) for this DI:            0.41
+DI done!
+
+iteration:   2
+--------------------------------------------------------------------------------
+FC starts ...
+File containing the features to be rejected: feature_space/Uspace.name
+Total number of features in the space phi00:             21
+Total number of features in the space phi01:            815
+Total number of features in the space phi02:         409276
+Total number of features in the space phi03:        1869478
+Size of the SIS-selected subspace from phi03:       3000
+Wall-clock time (second) for this FC:           35.26
+FC done!
+
+DI starts ...
+total number of SIS-selected features from all iterations:       6000
+L0 starts ...
+
+Model/descriptor for generating residual:
+================================================================================
+  2D descriptor (model): 
+Total RMSE,MaxAE:  38.903326172.675726
+@@@descriptor: 
+                      1:[((C*Tt)*(NT-TT))]
+                   3108:[exp(((Mo-C)/Cr))]
+       coefficients_001:     0.3490323434E-01    0.1584111089E+03
+          Intercept_001:     0.2061345818E+03
+         RMSE,MaxAE_001:     0.3890332581E+02    0.1726757255E+03
+================================================================================
+Wall-clock time (second) for this DI:            4.12
+DI done!
+
+iteration:   3
+--------------------------------------------------------------------------------
+FC starts ...
+File containing the features to be rejected: feature_space/Uspace.name
+Total number of features in the space phi00:             21
+Total number of features in the space phi01:            815
+Total number of features in the space phi02:         409276
+Total number of features in the space phi03:        1869478
+Size of the SIS-selected subspace from phi03:       3000
+Wall-clock time (second) for this FC:           35.50
+FC done!
+
+DI starts ...
+total number of SIS-selected features from all iterations:       9000
+L0 starts ...
+
+Final model/descriptor to report
+================================================================================
+  3D descriptor (model): 
+Total RMSE,MaxAE:  32.389474138.176367
+@@@descriptor: 
+                     23:[log((CT*(Cr+Si)))]
+                    588:[(C*abs(CT-(THT-TT)))]
+                   8970:[(NT/(Mo+abs(C-Ni)))]
+       coefficients_001:     0.8004948786E+02    0.1745117715E+01   -0.2652708129E-01
+          Intercept_001:     0.1452538658E+03
+         RMSE,MaxAE_001:     0.3238947426E+02    0.1381763672E+03
+================================================================================
+Wall-clock time (second) for this DI:        35464.92
+DI done!
+
+FCDI done !
+
+--------------------------------------------------------------------------------
+Total wall-clock time (second):        35581.56
+
+                                               Have a nice day !    
+
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@h030>
+Subject: Job 813872: <testjob> Done
+
+Job <testjob> was submitted from host <l02> by user <xjsjqianquan> in cluster <hpc>.
+Job was executed on host(s) <16*h030>, in queue <normal>, as user <xjsjqianquan> in cluster <hpc>.
+                            <16*h021>
+                            <16*h026>
+                            <16*h041>
+</data/home/xjsjqianquan> was used as the home directory.
+</data/home/xjsjqianquan/hn0809/test3D_4> was used as the working directory.
+Started at Thu Aug 13 05:10:13 2020
+Results reported at Thu Aug 13 15:03:29 2020
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -q normal
+#BSUB -n 64
+#BSUB -o SISSO.out
+#BSUB -e SISSO.err
+#BSUB -J testjob
+#BSUB -x
+
+ncpus=`cat $LSB_DJOB_HOSTFILE | wc -l`
+source /data/soft/compiler/intel/v2013/2013intel.sh
+source /data/soft/intel/impi/4.1.0.024/bin64/mpivars.sh
+#source /data/home/xjsjswf/RESCU/RESCUPackage/barc
+#mpirun -machine $LSB_DJOB_HOSTFILE  -np ${ncpus} rescu --smi -i scf.input
+mpirun -np ${ncpus} /data/home/xjsjqianquan/bin/SISSO >log
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time   :2182241.50 sec.
+    Max Memory :     55237 MB
+    Max Swap   :     84583 MB
+
+    Max Processes  :        77
+    Max Threads    :       206
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <SISSO.err> for stderr output of this job.
+
